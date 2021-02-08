@@ -373,7 +373,7 @@ def estimate_ratio_compute_mmd(x_de, x_nu, σs):
             ratio += kmm_ratios(Kdede, Kdenu, opt.eps_ratio)
             mmdsq += mmdsq_of(Kdede, Kdenu, Knunu)
     
-    raito = ratio / len(σs)
+    ratio = ratio / len(σs)
     ratio = torch.relu(ratio) if opt.clip_ratio else ratio
     mmd = torch.sqrt(torch.relu(mmdsq))
     
